@@ -1,0 +1,163 @@
+*{
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-size: 30px;
+    font-weight: normal;
+    color: white;
+}
+body{
+    margin: 0;
+    padding: 0;
+    overflow: hidden;  
+}
+#game{
+    overflow: hidden;  
+    width: 100vw;
+    height: 100vh;
+    background: url(./img/world.jpg);
+    background-position: center left;
+}
+#block{
+    width: 45px;
+    height: 100vh;
+    background: url(./img/blockbg.jpg);
+    background-position: center;
+    background-size: contain;
+    position: relative;
+}
+#hole{
+    width: 46px;
+    height: 193px;
+    background: url(./img/holebg.jpg);
+    background-size: contain;
+    position: relative;
+    top: -450px;
+    background-repeat: no-repeat;
+
+}
+/* #block, #hole{
+    left: 50vw;
+    animation: blockAnimation 2s infinite linear;
+
+} */
+
+#character{
+    width: 40px;
+    height: 30px;
+    background: url(./img/bird.png);
+    background-size: contain;
+    position: absolute;
+    background-repeat: no-repeat;
+    top: 20vh;
+    left: 20vw;
+}
+
+#score{
+    position: fixed;
+    top: 20px;
+    left: 20px;
+}
+#gameOverScreen{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+#gameOverScreen .backDrop{
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: .5;
+}
+
+#gameOverScreen .title,
+#gameOverScreen .score,
+#gameOverScreen button{
+    position: absolute;
+    z-index: 1;
+    left: calc(50% - 102px);
+    width: 204px;
+    top: 40%;
+    text-align: center;
+    color: rgb(255, 255, 74);
+    font-size: 24px;
+    padding: 5px 25px;
+}
+#gameOverScreen .title{
+    margin-top: -65px;
+    font-size: 43px;
+}
+#gameOverScreen .score{
+
+}
+#gameOverScreen button{
+    margin-top: 50px;
+    color: black;
+    font-size: 24px;
+    padding: 5px 25px;
+    cursor: pointer;
+    border: 0;
+    margin-left: 25px;
+}
+#star{
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    background: url(./img/star.png);
+    background-position: center;
+    background-size: contain;
+    left: 90vw;
+    top: 60vh;
+
+}
+
+.go-up{
+    animation: rotateUp 0.2s ;
+    animation-fill-mode: forwards;
+}
+.go-down{
+    animation: rotateDown 0.2s ;
+    animation-fill-mode: forwards;
+}
+/* ANIMATION OF TUBE */
+
+@keyframes blockAnimation {
+    0%{
+        left: 100vw;
+    }
+    100%{
+        left: -50vw;
+    }
+}
+
+/* ANIMATION OF BIRD */
+@keyframes rotateUp{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(-35deg);
+    }
+}
+
+@keyframes rotateDown{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(35deg);
+    }
+}
+/* ANIMATION OF BACKGROUND */
+
+@keyframes BackgroundAnimation {
+    0%{
+        background-position-x: 100vh;
+    }
+    100%{
+        background-position-x: 0vh;
+
+    }
+}
